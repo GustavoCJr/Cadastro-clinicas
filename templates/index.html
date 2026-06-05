@@ -1,9 +1,36 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro Clinicas</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro Clinicas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>Sistema de cadastro de clínicas</h1>
+    <p>Preencha os dados abaixo</p>
+  </header>
+  <main>
+    <div class="corpo-formulario">
+      <h2>Cadastro de Clínica</h2>
+      <form action="/cadastrarClinica" method="post">
+        <label for="cnome">Nome da Clínica:</label><input type="text" id="cnome" name="cnome" required>
+        <label for="cresponsavel">Nome do Responsável:</label><input type="text" id="cresponsavel" name="cresponsavel" required>
+        <label for="cemail">E-mail:</label><input type="email" id="cemail" name="cemail" placeholder="nome@email.com" required>
+        <label for="ctelefone">Telefone / WhatsApp:</label><input type="text" placeholder="(00) 00000-0000" id="ctelefone" name="ctelefone" required>
+
+        <label for="ccep">CEP:</label><input type="text" id="ccep" name="ccep" required>
+        <label for="cbairro">Bairro:</label><input type="text" id="cbairro" name="cbairro">
+        <label for="crua">Rua:</label><input type="text" id="crua" name="crua">
+        <label for="cnumero">Número:</label><input type="number" id="cnumero" name="cnumero">
+        <button type="submit">Cadastrar Clínica</button>
+      </form>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
 </html>
