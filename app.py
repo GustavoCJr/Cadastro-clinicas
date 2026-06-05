@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import requests
-from services.aqui import (
+from services.funcoes import (
     salvar_banco,
     ler_banco,
     validar_cep
