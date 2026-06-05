@@ -16,7 +16,7 @@
   <main>
     <div class="corpo-formulario">
       <h2>Cadastro de Clínica</h2>
-      <form action="/cadastrarClinica" method="post">
+      <form action="{{ url_for('cadastrar_clinica') }}" method="post">
         <label for="cnome">Nome da Clínica:</label><input type="text" id="cnome" name="cnome" required>
         <label for="cresponsavel">Nome do Responsável:</label><input type="text" id="cresponsavel" name="cresponsavel" required>
         <label for="cemail">E-mail:</label><input type="email" id="cemail" name="cemail" placeholder="nome@email.com" required>
@@ -29,7 +29,9 @@
         <button type="submit">Cadastrar Clínica</button>
       </form>
     </div>
+    <p><a>ver clinicas cadastradas</a></p>
   </main>
+  <script src="https://unpkg.com/imask"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
