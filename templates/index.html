@@ -25,11 +25,12 @@
         <label for="ccep">CEP:</label><input type="text" id="ccep" name="ccep" required>
         <label for="cbairro">Bairro:</label><input type="text" id="cbairro" name="cbairro">
         <label for="crua">Rua:</label><input type="text" id="crua" name="crua">
-        <label for="cnumero">Número:</label><input type="number" id="cnumero" name="cnumero">
+        <label for="cnumero">Número:</label><input type="number" id="cnumero" name="cnumero" required>
         <button type="submit">Cadastrar Clínica</button>
       </form>
     </div>
-    <p><a>ver clinicas cadastradas</a></p>
+    <br>
+    <p class="ccadastradas"><a href="{{ url_for('listar_clinicas') }}">ver clinicas cadastradas</a></p>
   </main>
   <script src="https://unpkg.com/imask"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
