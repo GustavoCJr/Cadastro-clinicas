@@ -5,6 +5,8 @@ from services.funcoes import (
     ler_banco,
     validar_cep
 )
+import json
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,9 +16,10 @@ def home():
 @app.route("/cadastrar-clinica", methods=['POST'])
 def cadastrar_clinica():
     dados_clinica = request.form.to_dict()
-    #fazer validações
+    for dado in dados_clinica.values():
+        if not dado:
+            return jsonify({"erro": "Dados incompletos"})
     dados_antigos = ler_banco()
-    #Fazer tratamento de erros
     dados_antigos.append(dados_clinica)
     salvar_banco(dados_antigos)
     return "Clinica cadastrada com sucesso!"
@@ -35,9 +38,21 @@ def buscar_cep():
         )
         dados_endereco = resposta.json()
         if "erro" in dados_endereco:
-            return jsonify({"erro": "CEP inexistente"}), 404
+            return jsonify({"erro": "CEP inexistente"})
         return jsonify(dados_endereco)
 
+@app.route("/clinicas_cadastradas")
+def listar_clinicas():
+    ARQUIVO_BD = 'data/banco.json'
+    if not os.path.exists(ARQUIVO_BD):
+        return jsonify({"erro": "Arquivo de dados não encontrado"})
+    else:
+        with open(ARQUIVO_BD, 'r', encoding='utf-8') as file:
+            clinicas = json.load(file) 
+            if not any(clinicas):
+                return jsonify({"retorno":"Nenhuma clínica cadastrada"})
+            else:
+                return render_template('clinicas.html', lista_de_clinicas= clinicas)
 
 if __name__ == '__main__':
     app.run(debug=True)
