@@ -10,18 +10,17 @@
 
 <body>
     <h1 class="clinicas">Lista de Clínicas</h1>
-    {% if clinicas %}
+    {% if lista_de_clinicas %}
     <ul>
-        {% for clinica in clinicas %}
+        {% for clinica in lista_de_clinicas %}
         <li>{{ clinica.cnome }} - {{ clinica.ctelefone }}</li>
         {% endfor %}
     </ul>
     {% else %}
     <p>Nenhuma clínica cadastrada</p>
     {% endif %}
-
-
-
+    <br>
+    <a href="{{ url_for('home') }}">Voltar para Home</a>
 
 </body>
 

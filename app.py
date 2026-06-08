@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import requests
 from services.funcoes import (
     salvar_banco,
@@ -22,7 +22,7 @@ def cadastrar_clinica():
     dados_antigos = ler_banco()
     dados_antigos.append(dados_clinica)
     salvar_banco(dados_antigos)
-    return "Clinica cadastrada com sucesso!"
+    return redirect(url_for('listar_clinicas'))
 
 @app.route("/buscar_cep", methods=['POST'])
 def buscar_cep():
