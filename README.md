@@ -38,7 +38,7 @@ git clone https://github.com/seu-usuario/vet-clinic-manager.git
 ### 2. Acesse a pasta do projeto
 
 ```bash
-cd vet-clinic-manager
+cd Cadastro-clinicas
 ```
 
 ### 3. Instale as dependências
