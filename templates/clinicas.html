@@ -10,11 +10,19 @@
 
 <body>
     <h1 class="clinicas">Lista de Clínicas</h1>
+    {% if clinicas %}
     <ul>
-        {% for clinica in lista_de_clinicas %}
+        {% for clinica in clinicas %}
         <li>{{ clinica.cnome }} - {{ clinica.ctelefone }}</li>
         {% endfor %}
     </ul>
+    {% else %}
+    <p>Nenhuma clínica cadastrada</p>
+    {% endif %}
+
+
+
+
 </body>
 
 </html>
