@@ -27,9 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#cbairro").readOnly = true;
         document.querySelector("#crua").value = dados.logradouro;
         document.querySelector("#crua").readOnly = true;
-        // Ver dados restantes
       } else {
-        alert(dados.erro || "Erro ao buscar o CEP");
+        alert(dados.erro);
       }
     } catch (erro) {
       console.error("Erro na requisição do CEP:", erro);
