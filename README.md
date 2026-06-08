@@ -17,7 +17,7 @@ Além do cadastro, as clínicas registradas podem ser visualizadas diretamente n
 - Listagem das clínicas cadastradas
 - Persistência dos dados utilizando arquivo JSON
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Python
 - Flask
@@ -27,7 +27,7 @@ Além do cadastro, as clínicas registradas podem ser visualizadas diretamente n
 - ViaCEP API
 - JSON
 
-## ⚙️ Como Executar
+## Como Executar
 
 ### 1. Clone o repositório
 
@@ -59,7 +59,7 @@ python app.py
 http://localhost:5000
 ```
 
-## 🌐 API Utilizada
+## API Utilizada
 
 ViaCEP
 
@@ -69,7 +69,7 @@ https://viacep.com.br/
 
 Utilizada para consulta automática de endereços a partir do CEP informado pelo usuário.
 
-## 👨‍💻 Autor
+## Autor
 
 Gustavo Cassettari Junior
 
