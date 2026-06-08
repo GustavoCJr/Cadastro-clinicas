@@ -43,16 +43,8 @@ def buscar_cep():
 
 @app.route("/clinicas_cadastradas")
 def listar_clinicas():
-    ARQUIVO_BD = 'data/banco.json'
-    if not os.path.exists(ARQUIVO_BD):
-        return jsonify({"erro": "Arquivo de dados não encontrado"})
-    else:
-        with open(ARQUIVO_BD, 'r', encoding='utf-8') as file:
-            clinicas = json.load(file) 
-            if not any(clinicas):
-                return jsonify({"retorno":"Nenhuma clínica cadastrada"})
-            else:
-                return render_template('clinicas.html', lista_de_clinicas= clinicas)
+    clinicas = ler_banco()
+    return render_template('clinicas.html', lista_de_clinicas= clinicas)
 
 if __name__ == '__main__':
     app.run(debug=True)
