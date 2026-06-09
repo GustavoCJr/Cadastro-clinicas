@@ -9,14 +9,20 @@
 </head>
 
 <body>
-  <header>
-    <h1>Sistema de cadastro de clínicas</h1>
-    <p>Preencha os dados abaixo</p>
+  <header class="cabecalho">
+    <div class="header-content">
+      <img src="{{ url_for('static', filename='img/logo.png')}}" alt="Logo" class="header-logo" />
+      <nav class="nav-header">
+        <a href="{{ url_for('home') }}" class="botao-header">Homepage</a>
+        <a href="{{ url_for('listar_clinicas') }}" class="botao-header">Ver clínicas cadastradas</a>
+      </nav>
+    </div>
   </header>
-  <main>
+  <main class="corpo">
+    <div class="imagemDog"><img src="{{ url_for('static', filename='img/cachorroForm.png' )}}" alt="teste"></div>
     <div class="corpo-formulario">
       <h2>Cadastro de Clínica</h2>
-      <form action="{{ url_for('cadastrar_clinica') }}" method="post">
+      <form action="{{ url_for('cadastrar_clinica') }}" method="post" class="form_cad">
         <label for="cnome">Nome da Clínica:</label><input type="text" id="cnome" name="cnome" required>
         <label for="cresponsavel">Nome do Responsável:</label><input type="text" id="cresponsavel" name="cresponsavel" required>
         <label for="cemail">E-mail:</label><input type="email" id="cemail" name="cemail" placeholder="nome@email.com" required>
@@ -28,12 +34,13 @@
         <label for="cnumero">Número:</label><input type="number" id="cnumero" name="cnumero" required>
         <button type="submit">Cadastrar Clínica</button>
       </form>
+      <br>
+      <p class="ccadastradas"><a href="{{ url_for('listar_clinicas') }}">ver clinicas cadastradas</a></p>
     </div>
-    <br>
-    <p class="ccadastradas"><a href="{{ url_for('listar_clinicas') }}">ver clinicas cadastradas</a></p>
   </main>
   <script src="https://unpkg.com/imask"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <footer class="rodape">Copyright: © Gustavo Junior - 2026</footer>
 </body>
 
 </html>
